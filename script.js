@@ -54,3 +54,25 @@ window.addEventListener('scroll', function() {
         });
     }
 });
+function copiarCorreo() {
+    var correo = document.getElementById("correo");
+    correo.select();
+    correo.setSelectionRange(0, 99999); // Para dispositivos móviles
+    document.execCommand("copy");
+
+    // Opcional: Mostrar una notificación temporal de que el correo fue copiado
+    var tooltip = document.createElement("div");
+    tooltip.innerHTML = "Correo copiado!";
+    tooltip.style.position = "fixed";
+    tooltip.style.bottom = "20px";
+    tooltip.style.right = "20px";
+    tooltip.style.padding = "10px";
+    tooltip.style.backgroundColor = "#1CB698";
+    tooltip.style.color = "#fff";
+    tooltip.style.borderRadius = "5px";
+    document.body.appendChild(tooltip);
+
+    setTimeout(function() {
+        document.body.removeChild(tooltip);
+    }, 2000);
+}
