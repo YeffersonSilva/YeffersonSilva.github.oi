@@ -964,3 +964,64 @@ footer .arriba{
 }
 
 
+
+/* Estilos del botón de copiar correo */
+#correo {
+    display: block;
+    width: calc(100% - 20px); /* Ajuste del ancho para incluir el padding */
+    padding: 10px;
+    margin: 10px auto; /* Centrado vertical y horizontal */
+    border: 2px solid #ccc; /* Borde más visible */
+    border-radius: 5px;
+    background-color: #f5f5f5; /* Fondo más claro */
+    color: #333; /* Texto más oscuro */
+    font-size: 16px;
+    text-align: center;
+    transition: border-color 0.3s ease; /* Transición suave del color del borde */
+}
+
+#correo:focus {
+    outline: none;
+    border-color: #1CB698; /* Cambio de color del borde al enfocar */
+}
+
+#copiar {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #1CB698;
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#copiar:hover {
+    background-color: #1c2a31;
+}
+
+/* Language switcher */
+
+/* Language switcher */
+.language-switcher {
+    display: flex;
+    gap: 10px;
+}
+.language-switcher button {
+    background-color: transparent;
+    border: 1px solid #1CB698;
+    padding: 5px 10px;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.language-switcher button img {
+    width: 20px;
+    height: 20px;
+}
+.language-switcher button:hover {
+    background-color: #1CB698;
+}

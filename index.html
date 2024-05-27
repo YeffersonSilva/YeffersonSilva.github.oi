@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,15 +15,20 @@
             <div class="logo">
                 <a href="#">Yefferson</a>
             </div>
+            <div class="language-switcher">
+                <button onclick="setLanguage('en')"><img src="img/eeuu.jpg" alt="English"></button>
+                <button onclick="setLanguage('es')"><img src="img/españa.png" alt="Español"></button>
+                <button onclick="setLanguage('pt')"><img src="img/brasil.jpg" alt="Português"></button>
+
+            </div>
             <nav id="nav">
                 <ul>
-                    <li><a href="#inicio" onclick="seleccionar()">HOME</a></li>
-                    <li><a href="#sobremi" onclick="seleccionar()">ABOUT ME</a></li>
-                    <li><a href="#skills" onclick="seleccionar()">SKILLS</a></li>
-                    <li><a href="#curriculum" onclick="seleccionar()">RESUME</a></li>
-                    <li><a href="#portfolio" onclick="seleccionar()">PORTFOLIO</a></li>
-               <!--         <li><a href="#contacto" onclick="seleccionar()">CONTACT</a></li>-->
-                    
+                    <li><a href="#inicio" onclick="seleccionar()" class="translatable" data-en="HOME" data-es="INICIO" data-pt="INÍCIO">HOME</a></li>
+                    <li><a href="#sobremi" onclick="seleccionar()" class="translatable" data-en="ABOUT ME" data-es="SOBRE MI" data-pt="SOBRE MIM">ABOUT ME</a></li>
+                    <li><a href="#skills" onclick="seleccionar()" class="translatable" data-en="SKILLS" data-es="HABILIDADES" data-pt="HABILIDADES">SKILLS</a></li>
+                    <li><a href="#curriculum" onclick="seleccionar()" class="translatable" data-en="RESUME" data-es="CURRÍCULUM" data-pt="CURRÍCULO">RESUME</a></li>
+                    <li><a href="#portfolio" onclick="seleccionar()" class="translatable" data-en="PORTFOLIO" data-es="PORTAFOLIO" data-pt="PORTFÓLIO">PORTFOLIO</a></li>
+                    <!-- <li><a href="#contacto" onclick="seleccionar()">CONTACT</a></li> -->
                 </ul>
             </nav>
             <div class="nav-responsive" onclick="mostrarOcultarMenu()">
@@ -39,12 +44,16 @@
                 <img src="img/yo01.jpg" alt="">
             </div>
             <h1>Yefferson Silva</h1>
-            <h2>Backend developer with experience in Spring Java, Node.js, and AWS, currently pursuing a degree in Analysis and Systems Development.</h2>
+            <h2 class="translatable" data-en="Backend developer with experience in Spring Java, Node.js, and AWS, currently pursuing a degree in Analysis and Systems Development."
+                data-es="Desarrollador backend con experiencia en Spring Java, Node.js y AWS, actualmente cursando un grado en Análisis y Desarrollo de Sistemas."
+                data-pt="Desenvolvedor backend com experiência em Spring Java, Node.js e AWS, atualmente cursando um grau em Análise e Desenvolvimento de Sistemas.">
+                Backend developer with experience in Spring Java, Node.js, and AWS, currently pursuing a degree in Analysis and Systems Development.
+            </h2>
             <div class="redes">
                 <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
                 <a href="URL_DE_TU_GITHUB"><i class="fa-brands fa-github"></i></a>
                 <input type="text" id="correo" value="yeffersonsilvagomez@gmail.com" readonly>
-                <button id="copiar" onclick="copiarCorreo()">Copiar Correo</button>
+                <button id="copiar" onclick="copiarCorreo()">Copy Email</button>
             </div>
         </div>
     </section>
@@ -52,18 +61,24 @@
     <!-- SECCION SOBRE MI -->
     <section id="sobremi" class="sobremi">
         <div class="contenido-seccion">
-            <h2>About Me</h2>
-            <p><span>Hi, I'm Yefferson.</span></p>
-            <p>
+            <h2 class="translatable" data-en="About Me" data-es="Sobre Mí" data-pt="Sobre Mim">About Me</h2>
+            <p class="translatable" data-en="Hi, I'm Yefferson." data-es="Hola, soy Yefferson." data-pt="Olá, sou Yefferson.">
+                Hi, I'm Yefferson.
+            </p>
+            <p class="translatable" data-en="I'm currently in my final semester at the Binational Faculty of UTEC Uruguay and IFSul Brazil, specializing in Systems Analysis and Development. My back-end development expertise centers around technologies like Spring with Java and Node.js. I also have advanced skills in AWS and Docker, enabling me to craft efficient and scalable solutions that perform seamlessly in production environments."
+                data-es="Actualmente estoy en mi último semestre en la Facultad Binacional de UTEC Uruguay e IFSul Brasil, especializándome en Análisis y Desarrollo de Sistemas. Mi experiencia en desarrollo backend se centra en tecnologías como Spring con Java y Node.js. También tengo habilidades avanzadas en AWS y Docker, lo que me permite crear soluciones eficientes y escalables que funcionan sin problemas en entornos de producción."
+                data-pt="Atualmente estou no meu último semestre na Faculdade Binacional da UTEC Uruguai e IFSul Brasil, especializando-me em Análise e Desenvolvimento de Sistemas. Minha experiência em desenvolvimento backend se concentra em tecnologias como Spring com Java e Node.js. Também tenho habilidades avançadas em AWS e Docker, o que me permite criar soluções eficientes e escaláveis que funcionam perfeitamente em ambientes de produção.">
                 I'm currently in my final semester at the Binational Faculty of UTEC Uruguay and IFSul Brazil, specializing in Systems Analysis and Development. My back-end development expertise centers around technologies like Spring with Java and Node.js. I also have advanced skills in AWS and Docker, enabling me to craft efficient and scalable solutions that perform seamlessly in production environments.
             </p>
-            <p>
+            <p class="translatable" data-en="Thanks to my fluency in Spanish, Portuguese, and English, I can comfortably work in multicultural teams and tackle challenges in international projects. I'm passionate about simplifying complex processes and finding innovative ways to overcome technical obstacles, always looking to improve and learn something new every day."
+                data-es="Gracias a mi fluidez en español, portugués e inglés, puedo trabajar cómodamente en equipos multiculturales y abordar desafíos en proyectos internacionales. Me apasiona simplificar procesos complejos y encontrar formas innovadoras de superar obstáculos técnicos, siempre buscando mejorar y aprender algo nuevo cada día."
+                data-pt="Graças à minha fluência em espanhol, português e inglês, posso trabalhar confortavelmente em equipes multiculturais e enfrentar desafios em projetos internacionais. Sou apaixonado por simplificar processos complexos e encontrar maneiras inovadoras de superar obstáculos técnicos, sempre buscando melhorar e aprender algo novo todos os dias.">
                 Thanks to my fluency in Spanish, Portuguese, and English, I can comfortably work in multicultural teams and tackle challenges in international projects. I'm passionate about simplifying complex processes and finding innovative ways to overcome technical obstacles, always looking to improve and learn something new every day.
             </p>
             <div class="fila">
                 <!-- datos personales -->
                 <div class="col">
-                    <h3>Personal Information</h3>
+                    <h3 class="translatable" data-en="Personal Information" data-es="Información Personal" data-pt="Informações Pessoais">Personal Information</h3>
                     <ul>
                         <li><strong>Age</strong> 24 years old</li>
                         <li><strong>Email</strong> yeffersonsilvagomez@gmail.com</li>
@@ -73,23 +88,23 @@
                 </div>
                 <!-- intereses -->
                 <div class="col">
-                    <h3>Interests</h3>
+                    <h3 class="translatable" data-en="Interests" data-es="Intereses" data-pt="Interesses">Interests</h3>
                     <div class="contenedor-intereses">
                         <div class="interes">
                             <i class="fa-solid fa-gamepad"></i>
-                            <span>Games</span>
+                            <span class="translatable" data-en="Games" data-es="Juegos" data-pt="Jogos">Games</span>
                         </div>
                         <div class="interes">
                             <i class="fa-solid fa-person-hiking"></i>
-                            <span>Sports</span>
+                            <span class="translatable" data-en="Sports" data-es="Deportes" data-pt="Esportes">Sports</span>
                         </div>
                         <div class="interes">
                             <i class="fa-solid fa-book"></i>
-                            <span>Books</span>
+                            <span class="translatable" data-en="Books" data-es="Libros" data-pt="Livros">Books</span>
                         </div>
                         <div class="interes">
                             <i class="fa-solid fa-car"></i>
-                            <span>Cars</span>
+                            <span class="translatable" data-en="Cars" data-es="Coches" data-pt="Carros">Cars</span>
                         </div>
                     </div>
                 </div>
@@ -106,11 +121,11 @@
     <!-- SECCION SKILLS -->
     <section class="skills" id="skills">
         <div class="contenido-seccion">
-            <h2>Skills</h2>
+            <h2 class="translatable" data-en="Skills" data-es="Habilidades" data-pt="Habilidades">Skills</h2>
             <div class="fila">
                 <!-- Technical Skill -->
                 <div class="col">
-                    <h3>Technical Skills</h3>
+                    <h3 class="translatable" data-en="Technical Skills" data-es="Habilidades Técnicas" data-pt="Habilidades Técnicas">Technical Skills</h3>
                     <div class="skill">
                         <span><i class="fab fa-java"></i> Java (Spring)</span>
                         <div class="barra-skill">
@@ -145,7 +160,7 @@
 
                 <!-- Professional Skills -->
                 <div class="col">
-                    <h3>Professional Skills</h3>
+                    <h3 class="translatable" data-en="Professional Skills" data-es="Habilidades Profesionales" data-pt="Habilidades Profissionais">Professional Skills</h3>
                     <div class="skill">
                         <span><i class="fas fa-comments"></i> Communication</span>
                         <div class="barra-skill">
@@ -184,15 +199,15 @@
     <!-- SECCION CURRICULUM -->
     <section id="curriculum" class="curriculum">
         <div class="contenido-seccion">
-            <h2>Curriculum</h2>
+            <h2 class="translatable" data-en="Resume" data-es="Currículum" data-pt="Currículo">Resume</h2>
             <div class="fila">
                 <div class="col izquierda">
-                    <h3>Education</h3>
+                    <h3 class="translatable" data-en="Education" data-es="Educación" data-pt="Educação">Education</h3>
                     <div class="item izq destacado">
                         <h4>Analysis and Systems Development</h4>
                         <span class="casa">Binational Faculty (IFSUL Brazil & UTEC Uruguay)</span>
                         <span class="fecha">2021 - 2024</span>
-                        <p>Pursuing a degree in Analysis and Systems Development.</p>
+                        <p class="translatable" data-en="Pursuing a degree in Analysis and Systems Development." data-es="Cursando un grado en Análisis y Desarrollo de Sistemas." data-pt="Cursando um grau em Análise e Desenvolvimento de Sistemas.">Pursuing a degree in Analysis and Systems Development.</p>
                         <div class="conectori">
                             <div class="circuloi"></div>
                         </div>
@@ -201,7 +216,7 @@
                         <h4>Back-End Specialization</h4>
                         <span class="casa">Sembrando TIC, Uruguay</span>
                         <span class="fecha">2020</span>
-                        <p>Completed a specialization in back-end development.</p>
+                        <p class="translatable" data-en="Completed a specialization in back-end development." data-es="Completó una especialización en desarrollo backend." data-pt="Concluiu uma especialização em desenvolvimento backend.">Completed a specialization in back-end development.</p>
                         <div class="conectori">
                             <div class="circuloi"></div>
                         </div>
@@ -210,7 +225,7 @@
                         <h4>AWS Bootcamp</h4>
                         <span class="casa">AWS</span>
                         <span class="fecha">2023</span>
-                        <p>Completed an intensive bootcamp on AWS services.</p>
+                        <p class="translatable" data-en="Completed an intensive bootcamp on AWS services." data-es="Completó un bootcamp intensivo sobre servicios de AWS." data-pt="Concluiu um bootcamp intensivo sobre serviços da AWS.">Completed an intensive bootcamp on AWS services.</p>
                         <div class="conectori">
                             <div class="circuloi"></div>
                         </div>
@@ -218,12 +233,12 @@
                 </div>
 
                 <div class="col derecha">
-                    <h3>Work Experience</h3>
-                    <div class="item izq destacado">
+                    <h3 class="translatable" data-en="Work Experience" data-es="Experiencia Laboral" data-pt="Experiência Profissional">Work Experience</h3>
+                    <div class="item der destacado-azul">
                         <h4>Backend and AWS Intern</h4>
                         <span class="casa">Compass OUL</span>
                         <span class="fecha">December 2023 - June 2024</span>
-                        <p>Worked as an intern focusing on back-end development and AWS services.</p>
+                        <p class="translatable" data-en="Worked as an intern focusing on back-end development and AWS services." data-es="Trabajé como pasante enfocándome en desarrollo backend y servicios AWS." data-pt="Trabalhei como estagiário focado no desenvolvimento backend e serviços AWS.">Worked as an intern focusing on back-end development and AWS services.</p>
                         <div class="conectord">
                             <div class="circulod"></div>
                         </div>
@@ -232,7 +247,7 @@
                         <h4>Freelance Web Developer</h4>
                         <span class="casa">Self-employed</span>
                         <span class="fecha">2023 - 2024</span>
-                        <p>Developed websites for various clients as a freelancer.</p>
+                        <p class="translatable" data-en="Developed websites for various clients as a freelancer." data-es="Desarrollé sitios web para varios clientes como freelancer." data-pt="Desenvolvi sites para vários clientes como freelancer.">Developed websites for various clients as a freelancer.</p>
                         <div class="conectord">
                             <div class="circulod"></div>
                         </div>
@@ -241,7 +256,7 @@
                         <h4>Mentor</h4>
                         <span class="casa">Binational Faculty</span>
                         <span class="fecha">2022</span>
-                        <p>Mentored students in database management and systems analysis.</p>
+                        <p class="translatable" data-en="Mentored students in database management and systems analysis." data-es="Mentoré a estudiantes en gestión de bases de datos y análisis de sistemas." data-pt="Orientei alunos em gerenciamento de banco de dados e análise de sistemas.">Mentored students in database management and systems analysis.</p>
                         <div class="conectord">
                             <div class="circulod"></div>
                         </div>
@@ -254,15 +269,17 @@
     <!-- SECCION PORTFOLIO -->
     <section id="portfolio" class="portfolio">
         <div class="contenido-seccion">
-            <h2>PORTFOLIO</h2>
-            <h3>Node.js Projects</h3>
+            <h2 class="translatable" data-en="Portfolio" data-es="Portafolio" data-pt="Portfólio">PORTFOLIO</h2>
+            <h3 class="translatable" data-en="Node.js Projects" data-es="Proyectos Node.js" data-pt="Projetos Node.js">Node.js Projects</h3>
             <div class="galeria">
                 <a href="https://github.com/YeffersonSilva/ConnectedTourism" target="_blank">
                     <div class="proyecto">
                         <img src="img/conne.png" alt="">
                         <div class="overlay">
                             <h3>Connected Tourism</h3>
-                            <p>A mobile app to enhance the tourist experience.</p>
+                            <p class="translatable" data-en="A mobile app to enhance the tourist experience." data-es="Una aplicación móvil para mejorar la experiencia turística." data-pt="Um aplicativo móvel para melhorar a experiência turística.">
+                                A mobile app to enhance the tourist experience.
+                            </p>
                         </div>
                     </div>
                 </a>
@@ -271,7 +288,9 @@
                         <img src="img/shop.png" alt="">
                         <div class="overlay">
                             <h3>Shop Control Center</h3>
-                            <p>An application to manage shop operations and inventory.</p>
+                            <p class="translatable" data-en="An application to manage shop operations and inventory." data-es="Una aplicación para gestionar operaciones y inventario de tiendas." data-pt="Um aplicativo para gerenciar operações e inventário de lojas.">
+                                An application to manage shop operations and inventory.
+                            </p>
                         </div>
                     </div>
                 </a>
@@ -280,7 +299,9 @@
                         <img src="img/red-social-corporativa.jpg" alt="">
                         <div class="overlay">
                             <h3>Social Spark API</h3>
-                            <p>A REST API for a social networking application.</p>
+                            <p class="translatable" data-en="A REST API for a social networking application." data-es="Una API REST para una aplicación de redes sociales." data-pt="Uma API REST para um aplicativo de rede social.">
+                                A REST API for a social networking application.
+                            </p>
                         </div>
                     </div>
                 </a>
@@ -289,7 +310,9 @@
                         <img src="img/pizza.png" alt="">
                         <div class="overlay">
                             <h3>Pizzeria System</h3>
-                            <p>A system to manage pizza restaurant operations.</p>
+                            <p class="translatable" data-en="A system to manage pizza restaurant operations." data-es="Un sistema para gestionar operaciones de pizzerías." data-pt="Um sistema para gerenciar operações de pizzarias.">
+                                A system to manage pizza restaurant operations.
+                            </p>
                         </div>
                     </div>
                 </a>
@@ -298,7 +321,9 @@
                         <img src="img/blog.png" alt="">
                         <div class="overlay">
                             <h3>Admin Blog Hub</h3>
-                            <p>A platform to manage and publish blog content.</p>
+                            <p class="translatable" data-en="A platform to manage and publish blog content." data-es="Una plataforma para gestionar y publicar contenido de blogs." data-pt="Uma plataforma para gerenciar e publicar conteúdo de blogs.">
+                                A platform to manage and publish blog content.
+                            </p>
                         </div>
                     </div>
                 </a>
@@ -307,12 +332,14 @@
                         <img src="img/meeti.png" alt="">
                         <div class="overlay">
                             <h3>Meeti-Plus</h3>
-                            <p>An application to manage and organize meetups.</p>
+                            <p class="translatable" data-en="An application to manage and organize meetups." data-es="Una aplicación para gestionar y organizar encuentros." data-pt="Um aplicativo para gerenciar e organizar encontros.">
+                                An application to manage and organize meetups.
+                            </p>
                         </div>
                     </div>
                 </a>
             </div>
-            <h3>Spring Projects</h3>
+            <h3 class="translatable" data-en="Spring Projects" data-es="Proyectos Spring" data-pt="Projetos Spring">Spring Projects</h3>
             <div class="galeria">
                 <!-- Aquí puedes agregar tus proyectos de Spring con el mismo formato -->
             </div>
@@ -320,5 +347,6 @@
     </section>
 
     <script src="script.js"></script>
+    
 </body>
 </html>

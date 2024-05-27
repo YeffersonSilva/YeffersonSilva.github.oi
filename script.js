@@ -76,3 +76,24 @@ function copiarCorreo() {
         document.body.removeChild(tooltip);
     }, 2000);
 }
+
+function setLanguage(language) {
+    document.querySelectorAll('.translatable').forEach(element => {
+        const translation = element.getAttribute(`data-${language}`);
+        if (translation) {
+            element.textContent = translation;
+        }
+    });
+
+    // Update the navigation links
+    const navLinks = {
+        'en': ['HOME', 'ABOUT ME', 'SKILLS', 'RESUME', 'PORTFOLIO'],
+        'es': ['INICIO', 'SOBRE MI', 'HABILIDADES', 'CURRÍCULUM', 'PORTAFOLIO'],
+        'pt': ['INÍCIO', 'SOBRE MIM', 'HABILIDADES', 'CURRÍCULO', 'PORTFÓLIO']
+    };
+
+    const navItems = document.querySelectorAll('#nav ul li a');
+    navItems.forEach((item, index) => {
+        item.textContent = navLinks[language][index];
+    });
+}
