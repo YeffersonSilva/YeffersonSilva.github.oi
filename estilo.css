@@ -1004,24 +1004,25 @@ footer .arriba{
 }
 
 /* Language switcher */
-
-/* Language switcher */
 .language-switcher {
     display: flex;
     gap: 10px;
 }
+
 .language-switcher button {
     background-color: transparent;
     border: 1px solid #1CB698;
-    padding: 5px 10px;
+    padding: 5px;
     color: #fff;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
+
 .language-switcher button img {
-    width: 20px;
-    height: 20px;
+    width: 24px; /* Ajusta el tamaño de las imágenes */
+    height: 16px; /* Ajusta el tamaño de las imágenes */
 }
+
 .language-switcher button:hover {
     background-color: #1CB698;
 }
