@@ -39,3 +39,18 @@ function efectoHabilidades(){
 window.onscroll = function(){
     efectoHabilidades();
 } 
+
+window.addEventListener('scroll', function() {
+    var skills = document.getElementById('skills');
+    var distancia_skills = window.innerHeight - skills.getBoundingClientRect().top;
+    if (distancia_skills >= 300) {
+        let habilidades = document.querySelectorAll('.progreso');
+        habilidades.forEach((habilidad) => {
+            habilidad.style.width = habilidad.classList.contains('java-spring') ? '90%' :
+                                    habilidad.classList.contains('nodejs') ? '85%' :
+                                    habilidad.classList.contains('aws') ? '80%' :
+                                    habilidad.classList.contains('docker') ? '75%' :
+                                    habilidad.classList.contains('databases') ? '70%' : '0';
+        });
+    }
+});
