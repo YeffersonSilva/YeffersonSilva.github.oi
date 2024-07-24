@@ -771,84 +771,133 @@ footer .arriba{
 }
 
 /* SECCION SKILLS */
-.skills {
-    background-color: #252A2E;
-    color: #fff;
-    padding: 50px 20px;
-}
-.skills .contenido-seccion {
-    max-width: 1100px;
-    margin: auto;
-}
-.skills h2 {
-    font-size: 48px;
-    font-family: 'Righteous';
-    text-align: center;
-    padding: 20px 0;
-}
-.skills .fila {
-    display: flex;
-}
-.skills .fila .col {
-    width: 50%;
-    padding: 0 20px;
-}
-.skills .fila .col h3 {
-    font-size: 28px;
-    font-family: 'Righteous';
-    margin-bottom: 25px;
-}
-.skills .skill {
-    margin-bottom: 20px;
-}
-.skills .skill > span {
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-}
-.skills .skill > span i {
-    margin-right: 10px;
-}
-.skills .barra-skill {
-    height: 10px;
-    background-color: #131517;
-    border-radius: 5px;
-    position: relative;
-    overflow: hidden;
-}
 .skills .barra-skill .progreso {
-    background-color: #1CB698;
     height: 100%;
     width: 0;
     border-radius: 5px;
     transition: width 2s ease;
 }
-.skills .barra-skill .progreso::after {
-    content: attr(data-value) '%';
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 12px;
-    color: #fff;
-}
 
+/* Back-End Skills */
 .skills .barra-skill .java-spring {
+    background-color: #1CB698; /* Verde */
+    animation: fillBar 2s forwards;
     width: 90%;
 }
+
 .skills .barra-skill .nodejs {
+    background-color: #1CB698;
+    animation: fillBar 2s forwards;
     width: 85%;
 }
+
 .skills .barra-skill .aws {
+    background-color: #1CB698;
+    animation: fillBar 2s forwards;
     width: 80%;
 }
+
 .skills .barra-skill .docker {
+    background-color: #1CB698;
+    animation: fillBar 2s forwards;
     width: 75%;
 }
+
 .skills .barra-skill .databases {
+    background-color: #1CB698;
+    animation: fillBar 2s forwards;
     width: 70%;
 }
+
+/* Front-End Skills */
+.skills .barra-skill .html5 {
+    background-color: #F16529;
+    animation: fillBar 2s forwards;
+    width: 90%;
+}
+
+.skills .barra-skill .css3 {
+    background-color: #2965F1;
+    animation: fillBar 2s forwards;
+    width: 85%;
+}
+
+.skills .barra-skill .javascript {
+    background-color: #F7DF1E; /* Amarillo */
+    animation: fillBar 2s forwards;
+    width: 80%;
+}
+
+.skills .barra-skill .react {
+    background-color: #61DAFB;
+    animation: fillBar 2s forwards;
+    width: 75%;
+}
+
+.skills .barra-skill .angular {
+    background-color: #DD0031;
+    animation: fillBar 2s forwards;
+    width: 70%;
+}
+
+.skills .barra-skill .nextjs {
+    background-color: #000000; /* Negro */
+    animation: fillBar 2s forwards;
+    width: 80%;
+}
+
+/* Professional Skills */
+.skills .barra-skill .communication {
+    background-color: #4CAF50; /* Verde */
+    animation: fillBar 2s forwards;
+    width: 85%;
+}
+
+.skills .barra-skill .teamwork {
+    background-color: #2196F3; /* Azul */
+    animation: fillBar 2s forwards;
+    width: 80%;
+}
+
+.skills .barra-skill .creativity {
+    background-color: #FFEB3B; /* Amarillo */
+    animation: fillBar 2s forwards;
+    width: 75%;
+}
+
+.skills .barra-skill .dedication {
+    background-color: #FF5722; /* Naranja */
+    animation: fillBar 2s forwards;
+    width: 90%;
+}
+
+.skills .barra-skill .project-management {
+    background-color: #9C27B0; /* Púrpura */
+    animation: fillBar 2s forwards;
+    width: 70%;
+}
+
+/* Animación para llenar las barras */
+@keyframes fillBar {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+/* Estilo para organizar las columnas */
+.skills-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.skills .col {
+    flex: 1;
+    margin: 10px;
+}
+
 
 /* SECCION CURRICULUM */
 .curriculum {
@@ -1026,3 +1075,60 @@ footer .arriba{
 .language-switcher button:hover {
     background-color: #1CB698;
 }
+
+
+/* Animación de desvanecimiento */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.contenedor-img img {
+    animation: fadeIn 3s ease-in-out;
+    transition: border 0.3s ease-in-out;
+}
+
+.contenedor-img img:hover {
+    border: 10px solid #1CB698;
+    box-shadow: 0 0 15px rgba(28, 182, 152, 0.7);
+}
+
+.contenido-banner h1 {
+    animation: slideInLeft 3s ease-in-out;
+}
+
+
+
+#rotating-text {
+    font-size: 24px;
+    margin-top: 10px;
+    color: #1CB698; /* Color del texto */
+    border-right: 2px solid #1CB698;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+

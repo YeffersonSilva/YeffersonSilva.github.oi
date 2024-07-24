@@ -1,59 +1,89 @@
 let menuVisible = false;
-//Función que oculta o muestra el menu
+
+// Función que oculta o muestra el menu
 function mostrarOcultarMenu(){
     if(menuVisible){
-        document.getElementById("nav").classList ="";
+        document.getElementById("nav").classList = "";
         menuVisible = false;
     }else{
-        document.getElementById("nav").classList ="responsive";
+        document.getElementById("nav").classList = "responsive";
         menuVisible = true;
     }
 }
 
 function seleccionar(){
-    //oculto el menu una vez que selecciono una opcion
+    // Oculto el menu una vez que selecciono una opcion
     document.getElementById("nav").classList = "";
     menuVisible = false;
 }
-//Funcion que aplica las animaciones de las habilidades
+
+// Función que aplica las animaciones de las habilidades
 function efectoHabilidades(){
     var skills = document.getElementById("skills");
     var distancia_skills = window.innerHeight - skills.getBoundingClientRect().top;
     if(distancia_skills >= 300){
-        let habilidades = document.getElementsByClassName("progreso");
-        habilidades[0].classList.add("javascript");
-        habilidades[1].classList.add("htmlcss");
-        habilidades[2].classList.add("photoshop");
-        habilidades[3].classList.add("wordpress");
-        habilidades[4].classList.add("drupal");
-        habilidades[5].classList.add("comunicacion");
-        habilidades[6].classList.add("trabajo");
-        habilidades[7].classList.add("creatividad");
-        habilidades[8].classList.add("dedicacion");
-        habilidades[9].classList.add("proyect");
+        let habilidades = document.querySelectorAll(".progreso");
+        habilidades.forEach((habilidad) => {
+            let skillClass = habilidad.classList[1]; // Obtén la segunda clase
+            switch(skillClass) {
+                case 'java-spring':
+                    habilidad.style.width = '90%';
+                    break;
+                case 'nodejs':
+                    habilidad.style.width = '85%';
+                    break;
+                case 'aws':
+                    habilidad.style.width = '80%';
+                    break;
+                case 'docker':
+                    habilidad.style.width = '75%';
+                    break;
+                case 'databases':
+                    habilidad.style.width = '70%';
+                    break;
+                case 'html5':
+                    habilidad.style.width = '90%';
+                    break;
+                case 'css3':
+                    habilidad.style.width = '85%';
+                    break;
+                case 'javascript':
+                    habilidad.style.width = '80%';
+                    break;
+                case 'react':
+                    habilidad.style.width = '75%';
+                    break;
+                case 'angular':
+                    habilidad.style.width = '70%';
+                    break;
+                case 'communication':
+                    habilidad.style.width = '85%';
+                    break;
+                case 'teamwork':
+                    habilidad.style.width = '80%';
+                    break;
+                case 'creativity':
+                    habilidad.style.width = '75%';
+                    break;
+                case 'dedication':
+                    habilidad.style.width = '90%';
+                    break;
+                case 'project-management':
+                    habilidad.style.width = '70%';
+                    break;
+                default:
+                    habilidad.style.width = '0';
+                    break;
+            }
+        });
     }
 }
 
-
-//detecto el scrolling para aplicar la animacion de la barra de habilidades
+// Detecto el scrolling para aplicar la animación de la barra de habilidades
 window.onscroll = function(){
     efectoHabilidades();
-} 
+};
 
-window.addEventListener('scroll', function() {
-    var skills = document.getElementById('skills');
-    var distancia_skills = window.innerHeight - skills.getBoundingClientRect().top;
-    if (distancia_skills >= 300) {
-        let habilidades = document.querySelectorAll('.progreso');
-        habilidades.forEach((habilidad) => {
-            habilidad.style.width = habilidad.classList.contains('java-spring') ? '90%' :
-                                    habilidad.classList.contains('nodejs') ? '85%' :
-                                    habilidad.classList.contains('aws') ? '80%' :
-                                    habilidad.classList.contains('docker') ? '75%' :
-                                    habilidad.classList.contains('databases') ? '70%' : '0';
-        });
-    }
-});
 function copiarCorreo() {
     var correo = document.getElementById("correo");
     correo.select();
@@ -85,7 +115,7 @@ function setLanguage(language) {
         }
     });
 
-    // Update the navigation links
+    // Actualiza los enlaces de navegación
     const navLinks = {
         'en': ['HOME', 'ABOUT ME', 'SKILLS', 'RESUME', 'PORTFOLIO'],
         'es': ['INICIO', 'SOBRE MI', 'HABILIDADES', 'CURRÍCULUM', 'PORTAFOLIO'],
@@ -97,3 +127,36 @@ function setLanguage(language) {
         item.textContent = navLinks[language][index];
     });
 }
+
+var phrases = [
+    "Full Stack Developer",
+    "AWS Solutions Architect",
+    "Custom Solutions Developer"
+];
+
+var currentPhraseIndex = 0;
+var currentCharacterIndex = 0;
+var isDeleting = false;
+var rotatingTextElement = document.getElementById("rotating-text");
+
+function typePhrase() {
+    var currentPhrase = phrases[currentPhraseIndex];
+    if (isDeleting) {
+        currentCharacterIndex--;
+        rotatingTextElement.textContent = currentPhrase.substring(0, currentCharacterIndex);
+        if (currentCharacterIndex == 0) {
+            isDeleting = false;
+            currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
+        }
+    } else {
+        currentCharacterIndex++;
+        rotatingTextElement.textContent = currentPhrase.substring(0, currentCharacterIndex);
+        if (currentCharacterIndex == currentPhrase.length) {
+            isDeleting = true;
+        }
+    }
+    var speed = isDeleting ? 100 : 200; // Aumenta el tiempo para hacerlo más lento
+    setTimeout(typePhrase, speed);
+}
+
+typePhrase(); // Inicializa la animación de escritura
